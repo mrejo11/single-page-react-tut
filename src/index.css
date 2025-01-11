@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+button > svg{
+    margin-right: 5px;
+}
+
+@font-face{
+    font-family: 'myfont';
+    src: url('component/font/Qs_Iranyekan.ttf') format('truetype');
+}
+
+div{
+    direction: rtl;
+    max-width: 1128px;
+    margin: 0 auto;
+}
+
+.dropdown{
+    direction: ltr;
+}
