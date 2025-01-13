@@ -15,8 +15,7 @@ button > svg{
 
 div{
     direction: rtl;
-    max-width: 1128px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
 
 .dropdown{

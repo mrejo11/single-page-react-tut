@@ -1,25 +1,21 @@
-import { BrowserRouter,Routes,Route,Link } from "react-router";
+import { BrowserRouter,Routes,Route, } from "react-router";
 import Home from "./component/Home";
 import AccordionPage from "./pages/AccordionPage"
 import DropDownPages from "./pages/DropDownPages"
-
+import Navigation from "./component/navigation"
+import ModalPage from "./pages/ModalPage";
 function App() {
   
   return (
  <BrowserRouter>
- <Link to="/">Home</Link>
- <br></br>
- <Link to="/accordion">AccordionPage</Link>
- <br></br>
- <Link to="/dropDown">DropDown</Link>
+  <Navigation />
   <Routes>
     <Route index element={<Home />} />
     <Route path="/accordion" element={<AccordionPage />} />
     <Route path="/dropDown" element={<DropDownPages />} />
+    <Route path="/modal" element={<ModalPage />} />
   </Routes>
  </BrowserRouter>
-
-  
   )
 }
 
