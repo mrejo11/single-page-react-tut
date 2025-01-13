@@ -3,6 +3,7 @@ import Home from "./component/Home";
 import AccordionPage from "./pages/AccordionPage"
 import DropDownPages from "./pages/DropDownPages"
 import Navigation from "./component/navigation"
+import ModalPage from "./pages/ModalPage";
 function App() {
   
   return (
@@ -12,6 +13,7 @@ function App() {
     <Route index element={<Home />} />
     <Route path="/accordion" element={<AccordionPage />} />
     <Route path="/dropDown" element={<DropDownPages />} />
+    <Route path="/modal" element={<ModalPage />} />
   </Routes>
  </BrowserRouter>
   )
