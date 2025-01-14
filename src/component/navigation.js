@@ -34,6 +34,15 @@ function Navigation() {
         Modal
       </Link>
       </div>
+      <div className={
+          location.pathname === "/table" ? "mt-2 pr-1 border-r-4 border-blue-500 mr-3" : null
+        }>
+      <Link
+        to="/table"
+      >
+        Table
+      </Link>
+      </div>
     </>
   );
 }

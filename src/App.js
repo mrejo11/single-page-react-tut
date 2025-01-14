@@ -4,6 +4,7 @@ import AccordionPage from "./pages/AccordionPage"
 import DropDownPages from "./pages/DropDownPages"
 import Navigation from "./component/navigation"
 import ModalPage from "./pages/ModalPage";
+import TablePage from "./pages/TablePage";
 function App() {
   
   return (
@@ -14,9 +15,16 @@ function App() {
     <Route path="/accordion" element={<AccordionPage />} />
     <Route path="/dropDown" element={<DropDownPages />} />
     <Route path="/modal" element={<ModalPage />} />
+    <Route path="/table" element={<TablePage />} />
   </Routes>
  </BrowserRouter>
   )
 }
 
 export default App;
+
+
+
+
+
+
