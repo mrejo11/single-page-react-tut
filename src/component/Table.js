@@ -1,36 +1,41 @@
+import { Fragment } from 'react';
 
+function Table({ data, config, keyFn }) {
+  const renderedHeaders = config.map((column) => {
+    if (column.header) {
+      return <Fragment key={column.label}>{column.header()}</Fragment>;
+    }
 
-function Table({data,config}) {
+    return <th key={column.label}>{column.label}</th>;
+  });
 
-    const renderHeaders=config.map((column)=>{
-        return <th key={column.lable}>{column.lable}</th>
-    })
-    const renderRows=data.map((rowData)=>{
-        const renderCells=config.map((column)=>{
-            return (
-                <td key={column.lable} className="p-2">{column.render(rowData)}</td>
-            )
-        })
-        return (
-            <tr className="border-b" key={rowData.name}>
-              {renderCells}
-            </tr>
-        )
-    })
+  const renderedRows = data.map((rowData) => {
+    const renderedCells = config.map((column) => {
+      return (
+        <td className="p-2" key={column.label}>
+          {column.render(rowData)}
+        </td>
+      );
+    });
+
+    return (
+      <tr className="border-b" key={keyFn(rowData)}>
+        {renderedCells}
+      </tr>
+    );
+  });
+
   return (
-    <div className=" flex items-center justify-center">
-     <table className="table-auto border-spacing-2">
-        <thead>
-            <tr className="border-b-2">
-              {renderHeaders}
-            </tr>
-        </thead>
-        <tbody>
-            {renderRows}
-        </tbody>
-     </table>
+    <div className='flex  justify-center'>
+    <table className="table-auto border-spacing-2 ">
+      <thead>
+        <tr className="border-b-2">{renderedHeaders}</tr>
+      </thead>
+      <tbody>{renderedRows}</tbody>
+    </table>
     </div>
-  )
+  );
 }
 
-export default Table
+export default Table;
+

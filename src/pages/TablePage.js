@@ -1,23 +1,38 @@
-import Table from "../component/Table";
+// import Table from '../components/Table';
+import SortableTable from "../component/SortableTable";
 
 function TablePage() {
   const data = [
-    { name: "پرتغال", color: "bg-orange-500", score: 5 },
-    { name: "سیب", color: "bg-red-500", score: 3 },
-    { name: "موز", color: "bg-yellow-500", score: 1 },
-    { name: "لیمو", color: "bg-green-500", score: 4 },
+    { name: 'Orange', color: 'bg-orange-500', score: 5 },
+    { name: 'Apple', color: 'bg-red-500', score: 3 },
+    { name: 'Banana', color: 'bg-yellow-500', score: 1 },
+    { name: 'Lime', color: 'bg-green-500', score: 4 },
   ];
 
   const config = [
-    { lable: "name", render: (fruit) => fruit.name },
-    { lable: "color", render:(fruit)=><div className={`p-3 m-2 ${fruit.color}`} />},
-    { lable: "score" ,render:(fruit)=>fruit.score},
+    {
+      label: 'Name',
+      render: (fruit) => fruit.name,
+      sortValue: (fruit) => fruit.name,
+    },
+    {
+      label: 'Color',
+      render: (fruit) => <div className={`p-3 m-2 ${fruit.color}`} />,
+    },
+    {
+      label: 'Score',
+      render: (fruit) => fruit.score,
+      sortValue: (fruit) => fruit.score,
+    },
   ];
 
+  const keyFn = (fruit) => {
+    return fruit.name;
+  };
 
   return (
     <div>
-      <Table data={data} config={config} />
+      <SortableTable data={data} config={config} keyFn={keyFn} />
     </div>
   );
 }

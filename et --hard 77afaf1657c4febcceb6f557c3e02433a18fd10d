@@ -1,0 +1,41 @@
+[33mcommit 77afaf1657c4febcceb6f557c3e02433a18fd10d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 63f3055 468a9b3
+Author: mehdi <mreko95@protonmail.com>
+Date:   Thu Jan 16 19:48:49 2025 +0330
+
+    Resolved merge conflicts in App.js and Navigation.js
+
+[1mdiff --cc src/App.js[m
+[1mindex 572caf0,5b60683..87d7245[m
+[1m--- a/src/App.js[m
+[1m+++ b/src/App.js[m
+[36m@@@ -1,15 -1,15 +1,29 @@@[m
+[32m++<<<<<<< HEAD[m
+[32m +import { BrowserRouter,Routes,Route } from "react-router";[m
+[32m +import Home from "./component/Home";[m
+[32m +import AccordionPage from "./pages/AccordionPage"[m
+[32m +import DropDownPages from "./pages/DropDownPages"[m
+[32m +import Navigation from "./component/Navigation";[m
+[32m +[m
+[32m++=======[m
+[32m+ import { BrowserRouter,Routes,Route, } from "react-router";[m
+[32m+ import Home from "./component/Home";[m
+[32m+ import AccordionPage from "./pages/AccordionPage"[m
+[32m+ import DropDownPages from "./pages/DropDownPages"[m
+[32m+ import Navigation from "./component/navigation"[m
+[32m+ import ModalPage from "./pages/ModalPage";[m
+[32m+ import TablePage from "./pages/TablePage";[m
+[32m++>>>>>>> 468a9b32864e0ba4f2ed7dcc65a07e9bc2b28b08[m
+  function App() {[m
+    [m
+[32m +[m
+    return ([m
+   <BrowserRouter>[m
+[32m++<<<<<<< HEAD[m
+[32m + <Navigation />[m
+[32m++=======[m
+[32m+   <Navigation />[m
+[32m++>>>>>>> 468a9b32864e0ba4f2ed7dcc65a07e9bc2b28b08[m
+    <Routes>[m
+      <Route index element={<Home />} />[m
+      <Route path="/accordion" element={<AccordionPage />} />[m
