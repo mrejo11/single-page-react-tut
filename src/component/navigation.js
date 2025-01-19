@@ -43,6 +43,15 @@ function Navigation() {
         Table
       </Link>
       </div>
+      <div className={
+          location.pathname === "/counter" ? "mt-2 pr-1 border-r-4 border-blue-500 mr-3" : null
+        }>
+      <Link
+        to="/counter"
+      >
+        Counter
+      </Link>
+      </div>
     </>
   );
 }
